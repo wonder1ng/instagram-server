@@ -21,4 +21,5 @@ jobs:
             git pull origin master
             ./gradlew clean build -x test
             sudo fuser -k -n tcp 8080 || true
+            cd build/libs
             nohup java -jar build/libs/*SNAPSHOT.jar > ./output.log 2>&1 & tail -f nohup.out
